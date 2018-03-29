@@ -5,12 +5,17 @@
     <jsp:include page="/partials/head.jsp">
         <jsp:param name="title" value="Viewing All the Ads" />
     </jsp:include>
+    <style>
+        body {
+            background: ${color}
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/partials/navbar.jsp"/>
 
     <div class="container">
-        <h1>Here are all the ads</h1>
+        <h1>Here are all the ads, ${sessionScope.name}/h1>
 
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
