@@ -1,11 +1,5 @@
 //package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.Ad;
-import com.mysql.cj.jdbc.Driver;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +7,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
-    public MySQLAdsDao(Config config) {
+    public MySQLAdsDao(config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -27,7 +21,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<AD> all() {
+    public List<Ad> all() {
         PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement("SELECT * FROM ads");
@@ -62,7 +56,7 @@ public class MySQLAdsDao implements Ads {
         return new Ad(
                 rs.getLong("id"),
                 rs.getLong("user_id"),
-                rs.getLong("title"),
+                rs.getString("title"),
                 rs.getString("description")
         );
     }

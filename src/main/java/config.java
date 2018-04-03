@@ -1,4 +1,4 @@
-public class Config {
+public class config {
     private String url = "jdbc:mysql://localhost/db_name?serverTimezone=UTC";
     private String username = "wonka";
     private String password = "chocolate";
