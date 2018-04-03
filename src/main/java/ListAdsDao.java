@@ -4,7 +4,7 @@ import java.util.List;
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
 
-    public List<AD> all() {
+    public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
         }

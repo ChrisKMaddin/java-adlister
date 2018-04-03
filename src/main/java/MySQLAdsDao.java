@@ -1,5 +1,5 @@
 //package com.codeup.adlister.dao;
-
+import com.mysql.cj.jdbc.Driver;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +7,13 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
-    public MySQLAdsDao(config config) {
+    public MySQLAdsDao(Config Config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUsername(),
-                    config.getPassword()
+                    Config.getUrl(),
+                    Config.getUsername(),
+                    Config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connceting to the database!", e);
@@ -22,10 +22,9 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
-        PreparedStatement stmt;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
-            ResultSet rs = stmt.executeQuery();
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
             return createAdsFromResult(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);

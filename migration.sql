@@ -12,7 +12,7 @@ CREATE TABLE USERS (
 );
 
 CREATE TABLE ads (
-  id          INT UNSIGNED NOT NULL,
+  id          INT UNSIGNED NOT NULL AUTO_INCREMENT,
   user_id     INT UNSIGNED NOT NULL,
   title       VARCHAR(250) NOT NULL,
   description TEXT         NOT NULL,
