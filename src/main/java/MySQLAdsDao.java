@@ -1,8 +1,8 @@
 //package com.codeup.adlister.dao;
-import com.mysql.cj.jdbc.Driver;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.mysql.cj.jdbc.Driver;
 
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
@@ -16,8 +16,9 @@ public class MySQLAdsDao implements Ads {
                     Config.getPassword()
             );
         } catch (SQLException e) {
-            throw new RuntimeException("Error connceting to the database!", e);
+            throw new RuntimeException("Error connecting to the database!", e);
         }
+
     }
 
     @Override
