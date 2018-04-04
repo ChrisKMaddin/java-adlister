@@ -9,7 +9,7 @@
     <jsp:include page="partials/navbar.jsp"/>
     <div class="container">
         <h1>Please fill in your information</h1>
-        <form action="form-group">
+        <form action="/register" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
