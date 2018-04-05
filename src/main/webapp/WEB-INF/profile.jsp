@@ -9,7 +9,7 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.getusername}!</h1>
+        <h1>Welcome, ${sessionScope.user.getUsername()}!</h1>
     </div>
 
 </body>

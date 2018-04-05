@@ -28,8 +28,8 @@ public class RegisterServlet extends HttpServlet {
         //validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty();
-//                || password.isEmpty()
-//                || (!password.equals(passwordConfirmation));
+//               || password.isEmpty()
+//               || (!password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
 
