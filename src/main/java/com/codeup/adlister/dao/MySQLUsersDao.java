@@ -33,10 +33,10 @@ public class MySQLUsersDao implements Users {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1,username);
+            stmt.setString(1, username);
             return extractUser(stmt.executeQuery());
         } catch (SQLException e) {
-            throw new RuntimeException("Error finding a user by username", e);
+            throw new RuntimeException("Error finding user", e);
         }
     }
 
